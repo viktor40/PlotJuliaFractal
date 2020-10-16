@@ -16,12 +16,12 @@ x = np.linspace(-m / s, m / s, num=m).reshape((1, m))
 y = np.linspace(-n / s, n / s, num=n).reshape((n, 1))
 Z = np.tile(x, (n, 1)) + 1j * np.tile(y, (1, m))
 
-c = 0.1 + 0.651j  # this is the constant used in the complex polynomials
+c = -0.4 + 0.6j  # this is the constant used in the complex polynomials
 C = np.full((n, m), c)  # C is the matrix representing the (complex) constant part of the polynomials
 M = np.full((n, m), True, dtype=bool)
 N = np.zeros((n, m))
 
-for i in range(64):  # number of iterations will change the level of detail
+for i in range(256):  # number of iterations will change the level of detail
     Z[M] = Z[M] * Z[M] + C[M]  # set of complex polynomials as matrices
     M[np.abs(Z) > 2] = False
     N[M] = i
