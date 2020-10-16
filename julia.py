@@ -38,8 +38,8 @@ ax.set_yticks([])
 
 # you can change the color map (cmap) to different maps for different colours in hte plot
 # more color maps can be found at https://matplotlib.org/3.3.2/tutorials/colors/colormaps.html
-plt.imshow(np.flipud(N), cmap='inferno')
-plt.savefig('julia-plt.png')
+plt.imshow(np.flipud(N), cmap='viridis')
+plt.savefig('julia.png')
 plt.show()
 
 
